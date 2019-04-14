@@ -30,9 +30,15 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+  if (num % 15 === 0){
+    return 'FizzBuzz';
+  } else if (num % 5 === 0){
+    return 'Buzz';
+  } else if (num % 3 === 0){
+    return 'Fizz';
+  }   
+  return num;
 }
-
 
 /**
  * Returns the factorial of the specified integer n.
@@ -46,7 +52,10 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+  if(n < 1){
+    return 1;
+  } 
+  return n * getFactorial(n - 1)
 }
 
 
@@ -63,7 +72,10 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+  let sum = 0;
+    for (let i = n1; i <= n2; i++)
+        sum = sum + i;
+    return sum;
 }
 
 
@@ -82,7 +94,7 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-    throw new Error('Not implemented');
+  return (a + b > c) && (a + c > b) && (c + b > a);
 }
 
 
@@ -119,7 +131,7 @@ function isTriangle(a,b,c) {
  *  
  */
 function doRectanglesOverlap(rect1, rect2) {
-    throw new Error('Not implemented');
+  return rect2.top < (rect1.top + rect1.height) && rect2.left < (rect1.left + rect1.width)
 }
 
 
@@ -150,7 +162,7 @@ function doRectanglesOverlap(rect1, rect2) {
  *   
  */
 function isInsideCircle(circle, point) {
-    throw new Error('Not implemented');
+return Math.sqrt(Math.pow(circle.center.x - point.x, 2) + Math.pow(circle.center.y - point.y, 2)) < circle.radius;
 }
 
 
@@ -209,7 +221,7 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+  return str.split("").reverse().join("");
 }
 
 
@@ -226,7 +238,7 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+  return num.toString().split("").reverse().join("");
 }
 
 
